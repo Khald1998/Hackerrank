@@ -20,11 +20,18 @@ class Result {
      */
 
     public static List<Integer> gradingStudents(List<Integer> grades) {
-    // Write your code here
-
+        for (int i = 0; i < grades.size(); i++) {
+            if (grades.get(i) >= 38) {
+                if ((grades.get(i) % 5) > 2) {
+                    grades.set(i, grades.get(i) + (5 - (grades.get(i) % 5)));
+                }
+            }
+        }
+        return grades;
     }
 
 }
+
 
 public class Solution {
     public static void main(String[] args) throws IOException {
